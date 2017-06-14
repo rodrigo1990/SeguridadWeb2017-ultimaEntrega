@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>SCAW - Presentación de JSF</title>
+	<link rel="stylesheet" type="text/css" href="css/table-style.css" />
+</h:head>
+
+<h:body>
+	<ui:include src="/header.xhtml" />	
+	<div class="panel-body">
+				
+		<h:form>
+			<h2>Login</h2>
+			
+			<h:panelGrid columns="2">	
+				<h:outputText value="Usuario:"></h:outputText><br></br>
+				<h:inputText value="#{usuarioBean.usuario}"></h:inputText>
+				<br></br>
+				<h:outputText value="Contraseña:"></h:outputText><br></br>
+				<h:inputSecret value="#{usuarioBean.password}"></h:inputSecret>
+			</h:panelGrid>
+			<br></br>
+			
+			<h:commandButton value="Ingresar" action="#{usuarioBean.crearSesion(usuarioBean.usuario, usuarioBean.password)}"></h:commandButton>
+		</h:form>
+	</div>
+</h:body>
+</html>
